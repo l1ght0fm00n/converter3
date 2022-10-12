@@ -38,8 +38,25 @@ def convert_test():
             "Выберите изображение и укажите формат")
 
 def convert():
-    pass
-
+    try:
+        global filename
+        image = Image.open(filename)
+        filename = filename.replace(".jpg", "")
+        filename = filename.replace(".png", "")
+        filename = filename.replace(".bmp", "")
+        filename = filename.replace(".gif", "")
+        if vkladka.get() == 'png':
+            image.save(filename + ".png")
+        elif vkladka.get() == 'jpg':
+            image.save(filename + ".jpg")
+        elif vkladka.get() == 'bmp':
+            image.save(filename + ".bmp")
+        elif vkladka.get() == 'gif':
+            image.save(filename + ".gif")
+    except:
+        mb.showerror(
+            "Ошибка",
+            "Выберите изображение и укажите формат")
 root = Tk()
 root.title('Конвертатор')
 root.wm_attributes('-alpha', 1)
@@ -60,7 +77,7 @@ title3.pack(pady=10)
 vkladka = ttk.Combobox(root, values=['png', 'jpg', 'bmp', 'gif'])
 vkladka.pack(pady=10)
 
-btn2 = Button(root, text='Конвертировать', command=convert_test)
+btn2 = Button(root, text='Конвертировать', command=convert)
 btn2.pack(pady=10)
 
 
