@@ -18,6 +18,7 @@ def choosefile_test():
 
 def convert_test():
     try:
+
         global filename
         image = Image.open(filename)
         filename = filename.replace(".jpg", "")
