@@ -10,7 +10,4 @@ def choosefile():
 
 
 def choosefile_test():
-
-    global filename
-    Tk().withdraw()
-    filename = askopenfilename()
+    pass
