@@ -6,7 +6,9 @@ from PIL import Image
 
 
 def choosefile():
-    pass
+    global filename
+    Tk().withdraw()
+    filename = askopenfilename()
 
 
 def choosefile_test():
